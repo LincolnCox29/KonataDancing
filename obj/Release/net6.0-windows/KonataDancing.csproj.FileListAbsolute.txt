@@ -1,0 +1,17 @@
+C:\Users\79242\Desktop\KonataDancing\bin\Release\net6.0-windows\KonataDancing.exe
+C:\Users\79242\Desktop\KonataDancing\bin\Release\net6.0-windows\KonataDancing.deps.json
+C:\Users\79242\Desktop\KonataDancing\bin\Release\net6.0-windows\KonataDancing.runtimeconfig.json
+C:\Users\79242\Desktop\KonataDancing\bin\Release\net6.0-windows\KonataDancing.dll
+C:\Users\79242\Desktop\KonataDancing\bin\Release\net6.0-windows\KonataDancing.pdb
+C:\Users\79242\Desktop\KonataDancing\obj\Release\net6.0-windows\KonataDancing.csproj.AssemblyReference.cache
+C:\Users\79242\Desktop\KonataDancing\obj\Release\net6.0-windows\KonataDancing.Form1.resources
+C:\Users\79242\Desktop\KonataDancing\obj\Release\net6.0-windows\KonataDancing.csproj.GenerateResource.cache
+C:\Users\79242\Desktop\KonataDancing\obj\Release\net6.0-windows\KonataDancing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\79242\Desktop\KonataDancing\obj\Release\net6.0-windows\KonataDancing.AssemblyInfoInputs.cache
+C:\Users\79242\Desktop\KonataDancing\obj\Release\net6.0-windows\KonataDancing.AssemblyInfo.cs
+C:\Users\79242\Desktop\KonataDancing\obj\Release\net6.0-windows\KonataDancing.csproj.CoreCompileInputs.cache
+C:\Users\79242\Desktop\KonataDancing\obj\Release\net6.0-windows\KonataDancing.dll
+C:\Users\79242\Desktop\KonataDancing\obj\Release\net6.0-windows\refint\KonataDancing.dll
+C:\Users\79242\Desktop\KonataDancing\obj\Release\net6.0-windows\KonataDancing.pdb
+C:\Users\79242\Desktop\KonataDancing\obj\Release\net6.0-windows\KonataDancing.genruntimeconfig.cache
+C:\Users\79242\Desktop\KonataDancing\obj\Release\net6.0-windows\ref\KonataDancing.dll
