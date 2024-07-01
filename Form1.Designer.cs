@@ -26,6 +26,7 @@
             this.ClientSize = new System.Drawing.Size(1200, 1000);
             this.Text = "Form1";
             this.Load += new EventHandler(MainForm_Load);
+            this.TopMost = true;
         }
     }
 }
