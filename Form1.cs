@@ -1,28 +1,26 @@
 using System;
 using System.Drawing;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace KonataDancing
 {
     public partial class Form1 : Form
     {
-
         int lastFrame = 1;
         Bitmap currentFrame;
         DoubleBufferedPictureBox pictureBox;
         System.Windows.Forms.Timer timer;
-        private Point lastLocation;
+        Point lastLocation;
 
         public Form1()
         {
             InitializeComponent();
-            pictureBox = initPictureBox();
+            pictureBox = InitPictureBox();
             Controls.Add(pictureBox);
 
-            pictureBox.MouseDown += new MouseEventHandler(PictureBox_MouseDown);
-            pictureBox.MouseMove += new MouseEventHandler(PictureBox_MouseMove);
-            pictureBox.MouseUp += new MouseEventHandler(PictureBox_MouseUp);
+            pictureBox.MouseDown += PictureBox_MouseDown;
+            pictureBox.MouseMove += PictureBox_MouseMove;
+            pictureBox.MouseUp += PictureBox_MouseUp;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -33,18 +31,27 @@ namespace KonataDancing
             timer.Start();
         }
 
-        private DoubleBufferedPictureBox initPictureBox() 
+        private DoubleBufferedPictureBox InitPictureBox()
         {
-            DoubleBufferedPictureBox pictureBox = new DoubleBufferedPictureBox
+            return new DoubleBufferedPictureBox
             {
                 Location = new Point(0, 0),
                 Size = new Size(500, 500),
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
-            return pictureBox;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
+        {
+            LoadNextFrame();
+
+            if (currentFrame != null)
+            {
+                pictureBox.Image = currentFrame;
+            }
+        }
+
+        private void LoadNextFrame()
         {
             if (currentFrame != null)
                 currentFrame.Dispose();
@@ -53,10 +60,10 @@ namespace KonataDancing
                 lastFrame = 1;
             lastFrame += 2;
 
-            using (Bitmap bmp = new Bitmap($"frames\\frame_{lastFrame.ToString("D4")}.png"))
+            string framePath = $"frames\\frame_{lastFrame.ToString("D4")}.png";
+            if (System.IO.File.Exists(framePath))
             {
-                currentFrame = new Bitmap(bmp);
-                pictureBox.Image = currentFrame;
+                currentFrame = new Bitmap(framePath);
             }
         }
 
@@ -85,14 +92,14 @@ namespace KonataDancing
             }
         }
     }
-}
 
-public class DoubleBufferedPictureBox : PictureBox
-{
-    public DoubleBufferedPictureBox()
+    public class DoubleBufferedPictureBox : PictureBox
     {
-        DoubleBuffered = true;
-        SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
-        UpdateStyles();
+        public DoubleBufferedPictureBox()
+        {
+            DoubleBuffered = true;
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
+            UpdateStyles();
+        }
     }
 }
