@@ -8,14 +8,10 @@
         {
             if (disposing)
             {
-                components.Dispose();
-                pictureBox.Dispose();
-
-                if (currentFrame != null)
-                    currentFrame.Dispose();
-
-                if (timer != null)
-                    timer.Dispose();
+                components?.Dispose();
+                pictureBox?.Dispose();
+                currentFrame?.Dispose();
+                timer?.Dispose();
             }
             base.Dispose(disposing);
         }

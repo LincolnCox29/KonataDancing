@@ -12,12 +12,17 @@ namespace KonataDancing
         Bitmap currentFrame;
         DoubleBufferedPictureBox pictureBox;
         System.Windows.Forms.Timer timer;
+        private Point lastLocation;
 
         public Form1()
         {
             InitializeComponent();
             pictureBox = initPictureBox();
             Controls.Add(pictureBox);
+
+            pictureBox.MouseDown += new MouseEventHandler(PictureBox_MouseDown);
+            pictureBox.MouseMove += new MouseEventHandler(PictureBox_MouseMove);
+            pictureBox.MouseUp += new MouseEventHandler(PictureBox_MouseUp);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -54,8 +59,34 @@ namespace KonataDancing
                 pictureBox.Image = currentFrame;
             }
         }
+
+        private void PictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                lastLocation = e.Location;
+            }
+        }
+
+        private void PictureBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastLocation.X;
+                this.Top += e.Y - lastLocation.Y;
+            }
+        }
+
+        private void PictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                lastLocation = Point.Empty;
+            }
+        }
     }
 }
+
 public class DoubleBufferedPictureBox : PictureBox
 {
     public DoubleBufferedPictureBox()
