@@ -36,7 +36,7 @@ namespace KonataDancing
             return new DoubleBufferedPictureBox
             {
                 Location = new Point(0, 0),
-                Size = new Size(500, 500),
+                Size = new Size(494, 360),
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
         }

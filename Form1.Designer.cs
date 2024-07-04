@@ -23,7 +23,7 @@
             this.BackColor = Color.Green;
             TransparencyKey = Color.Green;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 1000);
+            this.ClientSize = new System.Drawing.Size(494, 360);
             this.Text = "Form1";
             this.Load += new EventHandler(MainForm_Load);
             this.TopMost = true;
