@@ -56,7 +56,7 @@ namespace KonataDancing
             if (currentFrame != null)
                 currentFrame.Dispose();
 
-            if (lastFrame >= 2853)
+            if (lastFrame >= 711)
                 lastFrame = 1;
             lastFrame += 2;
 
